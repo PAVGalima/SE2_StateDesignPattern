@@ -6,7 +6,7 @@ public class Account {
     public Account(String accountNumber, Double balance) {
         this.accountNumber = accountNumber;
         this.balance = balance;
-        this.accountState = new ActiveState(); // Initial state is Active
+        this.accountState = new ActiveState(); // Initial state is Active.
     }
     public String getAccountNumber() {
         return accountNumber;
@@ -28,24 +28,22 @@ public class Account {
     public void setAccountState(AccountState accountState) {
         this.accountState = accountState;
     }
-    // Deposit method delegates to current state
+    // Deposit method.
     public void deposit(Double amount) {
         accountState.deposit(this, amount);
     }
-    // Withdraw method delegates to current state
+    // Withdraw method.
     public void withdraw(Double amount) {
         accountState.withdraw(this, amount);
     }
-    // Suspend method delegates to current state
+
     public void suspend() {
         accountState.suspend(this);
     }
-    // Activate method delegates to current state
     public void activate() {
         accountState.activate(this);
     }
 
-    // Close method delegates to current state
     public void close() {
         accountState.close(this);
     }
